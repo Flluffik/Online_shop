@@ -1,2 +1,2 @@
-# Online_shop
-Lab 1 for Web development
+# Пишем онлайн магазин для лабораторной работы по WEb
+Юпиии
