@@ -69,10 +69,8 @@ class Cart {
         const cartItems = document.getElementById('cartItems');
         const cartTotal = document.getElementById('cartTotal');
 
-        // Обновляем счетчик товаров
         cartCount.textContent = this.getTotalCount();
 
-        // Обновляем список товаров в корзине
         if (this.items.length === 0) {
             cartItems.innerHTML = '<div class="empty-cart">Корзина пуста</div>';
         } else {
@@ -93,7 +91,6 @@ class Cart {
             `).join('');
         }
 
-        // Обновляем общую сумму
         cartTotal.textContent = this.getTotalPrice();
     }
 
@@ -120,5 +117,5 @@ class Cart {
     }
 }
 
-// Создаем экземпляр корзины
+
 const cart = new Cart();
