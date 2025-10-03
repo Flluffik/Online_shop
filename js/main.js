@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Инициализация продуктов
     initializeProducts();
     
-    // Настройка обработчиков событий
     setupEventListeners();
 });
 
@@ -34,7 +32,6 @@ function setupEventListeners() {
     const closeModal = document.getElementById('closeModal');
     const orderForm = document.getElementById('orderForm');
 
-    // Открытие/закрытие корзины
     cartButton.addEventListener('click', () => {
         cartSidebar.classList.add('active');
     });
@@ -43,7 +40,6 @@ function setupEventListeners() {
         cartSidebar.classList.remove('active');
     });
 
-    // Оформление заказа
     checkoutButton.addEventListener('click', () => {
         if (cart.getTotalCount() === 0) {
             alert('Корзина пуста!');
@@ -53,28 +49,25 @@ function setupEventListeners() {
         modalOverlay.classList.add('active');
     });
 
-    // Закрытие модального окна
     closeModal.addEventListener('click', () => {
         modalOverlay.classList.remove('active');
     });
 
-    // Обработка формы заказа
+    
     orderForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // В реальном приложении здесь была бы отправка данных на сервер
         alert('Заказ создан!');
         
-        // Очищаем корзину и форму
         cart.clearCart();
         orderForm.reset();
         modalOverlay.classList.remove('active');
     });
 
-    // Закрытие модального окна при клике на оверлей
     modalOverlay.addEventListener('click', function(e) {
         if (e.target === modalOverlay) {
             modalOverlay.classList.remove('active');
         }
     });
+
 }
